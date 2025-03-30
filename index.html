@@ -7,37 +7,55 @@
   <title>Kmri Cricker</title>
   <script src="https://content.jwplatform.com/libraries/KB5zFt7A.js"></script>
   <style>
-    body {
-      background-color: black; /* Set background color to black */
-      margin: 0; /* Remove default margin */
-      display: flex; /* Use flexbox for centering */
-      flex-direction: column; /* Stack elements vertically */
-      justify-content: center; /* Center horizontally */
-      align-items: center; /* Center vertically */
-      height: 100vh; /* Full viewport height */
+    /* Basic reset for full-height player */
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
     }
-
+    /* Container for the JW Player */
     #video {
-      width: 100%; /* Full width */
-      max-width: 800px; /* Maximum width for larger screens */
-      aspect-ratio: 16 / 9; /* Maintain 16:9 aspect ratio */
+      width: 100%;
+      height: 80%;
     }
-
-    .telegram-button {
-      background-color: #0074d9; /* Button background color */
-      color: #fff; /* Button text color */
-      border: none; /* Remove border */
-      padding: 10px 20px; /* Padding for the button */
-      cursor: pointer; /* Pointer cursor on hover */
-      margin-top: 20px; /* Space above the button */
+    /* Quality toggle and selector styles */
+    .quality-toggle {
+      background-color: #0074d9;
+      color: white;
+      cursor: pointer;
+      padding: 10px;
+      text-align: center;
+      width: 100px;
+      margin: 10px auto;
+      border-radius: 5px;
     }
-
-    .telegram-button:hover {
-      background-color: #005bb5; /* Darker blue on hover */
+    .quality-selector {
+      display: none;
+      text-align: center;
+      margin-top: 10px;
+    }
+    .quality-option {
+      background-color: #0074d9;
+      color: white;
+      cursor: pointer;
+      margin: 5px auto;
+      padding: 5px 10px;
+      border-radius: 5px;
+      width: 80px;
+    }
+    .quality-option:hover {
+      background-color: #005bb5;
     }
   </style>
 </head>
 <body>
+  <!-- Telegram Join Prompt -->
+  <script type="text/javascript">
+    if (confirm("Join Our Telegram Channel For Latest Update") == true) {
+      window.open("https://t.me/kmricricker", '_blank');
+    }
+  </script>
+
   <div id="video"></div>
 
   <script type="text/javascript">
@@ -45,18 +63,48 @@
       image: "https://i.postimg.cc/9XGtny3q/IMG-20250221-222251-004.jpg",
       width: "100%",
       aspectratio: "16:9",
-      autostart: false,
+      autostart: "false",
       primary: "html5",
       preload: "auto",
-      mute: false,
-      file: "https://cdn-7.pishow.tv/live/1161/master.m3u8" /* Updated video link */
+      mute: "false",
+      file: "https://m3u8.cloudycx.net/media/hls/files/720p.m3u8"
     });
   </script>
 
-  <div style="text-align: center;">
+  <!-- Telegram Button -->
+  <div style="background-color: #0074d9; text-align: center; padding: 10px;">
     <a href="https://t.me/kmricricker" target="_blank">
-      <button class="telegram-button">Join Telegram</button>
+      <button id="joinTelegramButton" style="background-color: #fff; color: #0074d9; border: 2px solid #0074d9; padding: 5px 10px;">Join Telegram</button>
     </a>
   </div>
+
+  <!-- Quality Toggle -->
+  <div class="quality-toggle" onclick="toggleQualityMenu()">
+    <i class="fas fa-cog"></i>
+    <span id="currentQuality">Auto</span>
+  </div>
+
+  <!-- Quality Selector -->
+  <div class="quality-selector" id="qualityMenu">
+    <div class="quality-option" onclick="changeQuality('auto')">Auto</div>
+    <div class="quality-option" onclick="changeQuality('1080')">1080p</div>
+    <div class="quality-option" onclick="changeQuality('720')">720p</div>
+    <div class="quality-option" onclick="changeQuality('480')">480p</div>
+    <div class="quality-option" onclick="changeQuality('360')">360p</div>
+  </div>
+
+  <script>
+    // Toggle the visibility of the quality menu
+    function toggleQualityMenu() {
+      const menu = document.getElementById('qualityMenu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+
+    // Change video quality
+    function changeQuality(quality) {
+      alert(`Quality set to: ${quality}p`);
+      document.getElementById('currentQuality').textContent = quality;
+    }
+  </script>
 </body>
 </html>
