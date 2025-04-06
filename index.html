@@ -1,110 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kmri Cricker</title>
-  <script src="https://content.jwplatform.com/libraries/KB5zFt7A.js"></script>
-  <style>
-    /* Basic reset for full-height player */
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-    /* Container for the JW Player */
-    #video {
-      width: 100%;
-      height: 80%;
-    }
-    /* Quality toggle and selector styles */
-    .quality-toggle {
-      background-color: #0074d9;
-      color: white;
-      cursor: pointer;
-      padding: 10px;
-      text-align: center;
-      width: 100px;
-      margin: 10px auto;
-      border-radius: 5px;
-    }
-    .quality-selector {
-      display: none;
-      text-align: center;
-      margin-top: 10px;
-    }
-    .quality-option {
-      background-color: #0074d9;
-      color: white;
-      cursor: pointer;
-      margin: 5px auto;
-      padding: 5px 10px;
-      border-radius: 5px;
-      width: 80px;
-    }
-    .quality-option:hover {
-      background-color: #005bb5;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@kmricricker</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+    iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
 </head>
 <body>
-  <!-- Telegram Join Prompt -->
-  <script type="text/javascript">
-    if (confirm("Join Our Telegram Channel For Latest Update") == true) {
-      window.open("https://t.me/kmricricker", '_blank');
-    }
-  </script>
-
-  <div id="video"></div>
-
-  <script type="text/javascript">
-    jwplayer("video").setup({
-      image: "https://i.postimg.cc/9XGtny3q/IMG-20250221-222251-004.jpg",
-      width: "100%",
-      aspectratio: "16:9",
-      autostart: "false",
-      primary: "html5",
-      preload: "auto",
-      mute: "false",
-      file: "https://m3u8.cloudycx.net/media/hls/files/720p.m3u8"
-    });
-  </script>
-
-  <!-- Telegram Button -->
-  <div style="background-color: #0074d9; text-align: center; padding: 10px;">
-    <a href="https://t.me/kmricricker" target="_blank">
-      <button id="joinTelegramButton" style="background-color: #fff; color: #0074d9; border: 2px solid #0074d9; padding: 5px 10px;">Join Telegram</button>
-    </a>
-  </div>
-
-  <!-- Quality Toggle -->
-  <div class="quality-toggle" onclick="toggleQualityMenu()">
-    <i class="fas fa-cog"></i>
-    <span id="currentQuality">Auto</span>
-  </div>
-
-  <!-- Quality Selector -->
-  <div class="quality-selector" id="qualityMenu">
-    <div class="quality-option" onclick="changeQuality('auto')">Auto</div>
-    <div class="quality-option" onclick="changeQuality('1080')">1080p</div>
-    <div class="quality-option" onclick="changeQuality('720')">720p</div>
-    <div class="quality-option" onclick="changeQuality('480')">480p</div>
-    <div class="quality-option" onclick="changeQuality('360')">360p</div>
-  </div>
-
-  <script>
-    // Toggle the visibility of the quality menu
-    function toggleQualityMenu() {
-      const menu = document.getElementById('qualityMenu');
-      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-    }
-
-    // Change video quality
-    function changeQuality(quality) {
-      alert(`Quality set to: ${quality}p`);
-      document.getElementById('currentQuality').textContent = quality;
-    }
-  </script>
+    <iframe src="https://binge-player.pages.dev/alpha?id=sp2"></iframe>
+    <script>// Confirmation message for joining Telegram channel
+  var a = confirm("Join For More Match Links!!");
+  if (a == true) {
+    window.location.href = "https://t.me/kmricricker";  // Updated Telegram channel link
+  }</script>
 </body>
 </html>
